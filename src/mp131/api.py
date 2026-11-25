@@ -1,11 +1,17 @@
 from pathlib import Path
+import os
 
 import joblib
 import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel, ConfigDict, Field
 
-MODEL_PATH = Path(__file__).resolve().parents[2] / "models" / "model.joblib"
+MODEL_PATH = Path(
+    os.getenv(
+        "MODEL_PATH",
+        str(Path(__file__).resolve().parents[2] / "models" / "model.joblib")
+    )
+)
 model = joblib.load(MODEL_PATH)
 
 app = FastAPI(title="MP131 OPD Waiting Time Prediction")
