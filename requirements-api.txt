@@ -4,3 +4,5 @@ joblib==1.6.0
 fastapi
 uvicorn
 pydantic
+
+httpx2
