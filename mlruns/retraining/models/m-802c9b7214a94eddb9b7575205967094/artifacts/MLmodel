@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/Aryavart/G227_MP131/mlruns/retraining/models/m-802c9b7214a94eddb9b7575205967094/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.1
+    skops_trusted_types: null
+mlflow_version: 3.18.0
+model_id: m-802c9b7214a94eddb9b7575205967094
+model_size_bytes: 5951183
+model_uuid: m-802c9b7214a94eddb9b7575205967094
+prompts: null
+run_id: 79e29cf0d2414ce28fe61c82932e3479
+utc_time_created: '2026-11-27 16:07:01.285017'
