@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-11-27T17:55:06.752228+00:00",
+  "reference_dataset": "data/raw/train.csv",
+  "current_dataset": "data/raw/later.csv",
+  "model": {
+    "name": "mp131-wait-time",
+    "version": "2"
+  },
+  "numerical_feature_drift": {
+    "features": [
+      {
+        "feature": "patients_ahead",
+        "training_mean": 39.884,
+        "later_mean": 39.7233,
+        "training_std": 23.1272,
+        "later_std": 23.494,
+        "abs_mean_diff": 0.1607,
+        "rel_mean_change": 0.004,
+        "psi": 0.0281,
+        "drift_classification": "Stable"
+      },
+      {
+        "feature": "doctors_on_duty",
+        "training_mean": 5.4786,
+        "later_mean": 5.4167,
+        "training_std": 2.6144,
+        "later_std": 2.5583,
+        "abs_mean_diff": 0.0619,
+        "rel_mean_change": 0.0113,
+        "psi": 0.039,
+        "drift_classification": "Stable"
+      },
+      {
+        "feature": "arrival_hour",
+        "training_mean": 13.021,
+        "later_mean": 12.6367,
+        "training_std": 2.8721,
+        "later_std": 2.8645,
+        "abs_mean_diff": 0.3843,
+        "rel_mean_change": 0.0295,
+        "psi": 0.0598,
+        "drift_classification": "Stable"
+      },
+      {
+        "feature": "avg_consult_min",
+        "training_mean": 11.905,
+        "later_mean": 11.827,
+        "training_std": 4.6001,
+        "later_std": 4.7751,
+        "abs_mean_diff": 0.078,
+        "rel_mean_change": 0.0066,
+        "psi": 0.0189,
+        "drift_classification": "Stable"
+      },
+      {
+        "feature": "lab_tests_pending",
+        "training_mean": 19.73,
+        "later_mean": 20.1733,
+        "training_std": 11.4685,
+        "later_std": 11.5421,
+        "abs_mean_diff": 0.4433,
+        "rel_mean_change": 0.0225,
+        "psi": 0.017,
+        "drift_classification": "Stable"
+      },
+      {
+        "feature": "distance_km",
+        "training_mean": 20.108,
+        "later_mean": 37.6797,
+        "training_std": 11.312,
+        "later_std": 11.4019,
+        "abs_mean_diff": 17.5717,
+        "rel_mean_change": 0.8739,
+        "psi": 5.3869,
+        "drift_classification": "Significant Drift"
+      }
+    ],
+    "most_drifted_feature": "distance_km",
+    "highest_psi": 5.3869
+  },
+  "performance_monitoring": {
+    "mae_by_wing": [
+      {
+        "wing": "Annexe",
+        "sample_count": 119,
+        "mae_minutes": 14.4869
+      },
+      {
+        "wing": "New Wing",
+        "sample_count": 73,
+        "mae_minutes": 54.518
+      },
+      {
+        "wing": "Old Wing",
+        "sample_count": 108,
+        "mae_minutes": 15.8228
+      }
+    ],
+    "worst_served_group": "New Wing",
+    "highest_mae_minutes": 54.518
+  }
+}

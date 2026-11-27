@@ -1,4 +1,4 @@
-﻿group_id: "G227"
+group_id: "G227"
 problem_id: "MP131"
 
 data_issues:
@@ -39,18 +39,18 @@ tracking:
 
 monitoring:
   psi:
-    patients_ahead: null
-    doctors_on_duty: null
-    arrival_hour: null
-    avg_consult_min: null
-    lab_tests_pending: null
-    distance_km: null
-  most_drifted_feature: null
+    patients_ahead: 0.0281
+    doctors_on_duty: 0.039
+    arrival_hour: 0.0598
+    avg_consult_min: 0.0189
+    lab_tests_pending: 0.017
+    distance_km: 5.3869
+  most_drifted_feature: "distance_km"
   mae_by_group:
-    'Old Wing': null
-    'New Wing': null
-    'Annexe': null
-  worst_served_group: null
+    'Old Wing': 15.8228
+    'New Wing': 54.518
+    'Annexe': 14.4869
+  worst_served_group: "New Wing"
   mae_v1_on_check: 22.2801
   mae_v2_on_check: 8.4905
   decision: "promote"
