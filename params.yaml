@@ -1,0 +1,20 @@
+data:
+  train_path: data/raw/train.csv
+  later_path: data/raw/later.csv
+  holdout_path: data/raw/holdout_features.csv
+
+artifacts:
+  model_path: models/model.joblib
+  predictions_path: predictions/holdout_predictions.csv
+  findings_path: findings.yaml
+
+mlflow:
+  tracking_uri: sqlite:///mlflow.db
+  experiment_name: MP131-OPD-Wait-Time
+  registered_model_name: mp131-wait-time
+  champion_alias: champion
+
+retraining:
+  later_train_fraction: 0.7
+  promotion_min_improvement: 0.05
+  max_depth: 10

@@ -32,10 +32,10 @@ data_issues:
     true_levels: null
 
 tracking:
-  experiment_name: null
-  best_run_id: null
-  registered_model_name: null
-  champion_version: null
+  experiment_name: "MP131-OPD-Wait-Time"
+  best_run_id: "5bd78a8bc2594208bacf681a3f8acef3"
+  registered_model_name: "mp131-wait-time"
+  champion_version: 3
 
 monitoring:
   psi:
@@ -51,6 +51,6 @@ monitoring:
     'New Wing': null
     'Annexe': null
   worst_served_group: null
-  mae_v1_on_check: null
-  mae_v2_on_check: null
-  decision: null
+  mae_v1_on_check: 22.2801
+  mae_v2_on_check: 8.4905
+  decision: "promote"
