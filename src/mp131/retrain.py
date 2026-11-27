@@ -5,12 +5,52 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.impute import SimpleImputer
 from sklearn.metrics import mean_absolute_error
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 sys.path.insert(0, os.path.abspath("src"))
 
 from mp131.cleaning import clean_features, clean_training_data
-from mp131.train import build_pipeline
+
+
+def build_pipeline(max_depth):
+    """Build the preprocessing and RandomForestRegressor pipeline."""
+    numeric_features = [
+        "patients_ahead",
+        "doctors_on_duty",
+        "arrival_hour",
+        "avg_consult_min",
+        "lab_tests_pending",
+        "distance_km",
+    ]
+    categorical_features = ["department", "wing"]
+
+    numeric_pipeline = Pipeline([
+        ("imputer", SimpleImputer(strategy="median")),
+        ("scaler", StandardScaler()),
+    ])
+    categorical_pipeline = Pipeline([
+        ("imputer", SimpleImputer(strategy="most_frequent")),
+        ("encoder", OneHotEncoder(handle_unknown="ignore")),
+    ])
+    preprocessor = ColumnTransformer([
+        ("numeric", numeric_pipeline, numeric_features),
+        ("categorical", categorical_pipeline, categorical_features),
+    ])
+
+    return Pipeline([
+        ("preprocessor", preprocessor),
+        ("model", RandomForestRegressor(
+            n_estimators=100,
+            max_depth=max_depth,
+            random_state=42,
+            n_jobs=-1,
+        )),
+    ])
 
 
 DEFAULT_PARAMS = {

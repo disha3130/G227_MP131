@@ -2,8 +2,7 @@ import pandas as pd
 
 from src.mp131.cleaning import FEATURE_COLUMNS, clean_features
 from src.mp131.predict import predict_holdout
-from src.mp131.retrain import decide_promotion, split_later_by_date
-from src.mp131.train import build_pipeline
+from src.mp131.retrain import build_pipeline, decide_promotion, split_later_by_date
 
 
 def _synthetic_records(dates, wait_base=60.0):
