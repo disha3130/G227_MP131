@@ -29,11 +29,16 @@ Mean Absolute Error (MAE).
 - Kubernetes
 
 ## Team
-Group G227 – B.Tech Computer Science and Engineering.
+
+Group G227 – B.Tech Computer Science and Engineering:
+- S24CSEU1367 – Pradeep Chhaba
+- S24CSEU1339 – Disha Chaudhary
+- S24CSEU1364 – Aryan Bhardwaj
+- S24CSEU1343 – Aryavart Singh Payal
 
 ## Project Status
 
 - Stage 1: Repository setup and dataset tracking – Completed
 - Stage 2: Data cleaning, model training and MLflow tracking – Completed
 - Stage 3: FastAPI, API testing, Docker, CI/CD, Kubernetes and JSON logging – Completed
-- Stage 4: Drift monitoring, model retraining and holdout predictions – In Progress
+- Stage 4: Drift monitoring, model retraining and holdout predictions – Completed
