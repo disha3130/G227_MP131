@@ -2,7 +2,7 @@ import pandas as pd
 
 from src.mp131.cleaning import FEATURE_COLUMNS, clean_features
 from src.mp131.predict import predict_holdout
-from src.mp131.retrain import build_pipeline, decide_promotion, split_later_by_date
+from src.mp131.retrain import DEFAULT_PARAMS, build_pipeline, decide_promotion, split_later_by_date
 
 
 def _synthetic_records(dates, wait_base=60.0):
@@ -62,3 +62,7 @@ def test_predict_holdout_format():
     assert len(preds) == 4
     assert list(preds["record_id"]) == list(holdout_df["record_id"])
     assert preds["prediction"].notna().all()
+
+
+def test_baseline_version_defaults_to_stage2_champion():
+    assert str(DEFAULT_PARAMS["mlflow"]["baseline_version"]) == "2"

@@ -68,6 +68,7 @@ DEFAULT_PARAMS = {
         "tracking_uri": "sqlite:///mlflow.db",
         "experiment_name": "MP131-OPD-Wait-Time",
         "registered_model_name": "mp131-wait-time",
+        "baseline_version": "2",
         "champion_alias": "champion",
     },
     "retraining": {
@@ -215,10 +216,11 @@ def main(params_path="params.yaml"):
     X_retrain = pd.concat([X_train, X_later_first], ignore_index=True)
     y_retrain = pd.concat([y_train, y_later_first], ignore_index=True)
 
-    # Load baseline v1 model
+    # Load Stage 2 champion baseline model (registered version 2)
+    baseline_version = str(mlf_cfg["baseline_version"])
     v1_model = load_registered_model(
         mlf_cfg["registered_model_name"],
-        "1",
+        baseline_version,
         mlf_cfg["tracking_uri"],
         art_cfg["model_path"],
     )
@@ -241,6 +243,7 @@ def main(params_path="params.yaml"):
     exp_used = _get_or_create_writable_experiment(mlf_cfg["experiment_name"])
 
     with mlflow.start_run(run_name="retrain-v2-random-forest") as run:
+        mlflow.log_param("baseline_version", baseline_version)
         mlflow.log_param("model_type", "RandomForestRegressor")
         mlflow.log_param("n_estimators", 100)
         mlflow.log_param("max_depth", str(max_depth))

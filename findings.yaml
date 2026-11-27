@@ -33,7 +33,7 @@ data_issues:
 
 tracking:
   experiment_name: "MP131-OPD-Wait-Time"
-  best_run_id: "5bd78a8bc2594208bacf681a3f8acef3"
+  best_run_id: "0503735a4398463e9e9d6b21f4eb0785"
   registered_model_name: "mp131-wait-time"
   champion_version: 3
 

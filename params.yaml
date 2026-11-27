@@ -12,6 +12,7 @@ mlflow:
   tracking_uri: sqlite:///mlflow.db
   experiment_name: MP131-OPD-Wait-Time
   registered_model_name: mp131-wait-time
+  baseline_version: "2"
   champion_alias: champion
 
 retraining:
