@@ -26,7 +26,8 @@ def test_calculate_psi_handles_empty_and_nan():
     actual = [1.0, 2.0, 3.0, 4.0, 5.0]
     psi = calculate_psi(expected, actual, bins=5)
     assert psi >= 0.0
-    assert calculate_psi([], [1, 2, 3]) == 0.0
+    with pytest.raises(ValueError):
+        calculate_psi([], [1, 2, 3])
 
 
 def test_compute_feature_drift_identifies_most_drifted():
