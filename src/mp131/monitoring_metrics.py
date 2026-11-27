@@ -17,7 +17,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import joblib
 import numpy as np
 import pandas as pd
-import yaml
 from sklearn.metrics import mean_absolute_error
 
 sys.path.insert(0, os.path.abspath("src"))
@@ -215,6 +214,8 @@ def update_findings_yaml(
     path = Path(findings_path)
     if not path.exists():
         raise FileNotFoundError(f"{findings_path} does not exist.")
+
+    import yaml
 
     with path.open("r", encoding="utf-8") as f:
         findings = yaml.safe_load(f) or {}

@@ -138,7 +138,7 @@ monitoring:
         findings_path=str(findings_file),
     )
 
-    import yaml
+    yaml = pytest.importorskip("yaml")
     with findings_file.open("r", encoding="utf-8") as f:
         updated = yaml.safe_load(f)
 

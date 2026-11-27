@@ -4,5 +4,6 @@ joblib==1.6.0
 fastapi
 uvicorn
 pydantic
+pyyaml==6.0.4
 
 httpx2
