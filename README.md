@@ -32,4 +32,8 @@ Mean Absolute Error (MAE).
 Group G227 – B.Tech Computer Science and Engineering.
 
 ## Project Status
-Stage 1: Repository setup and dataset tracking in progress.
+
+- Stage 1: Repository setup and dataset tracking – Completed
+- Stage 2: Data cleaning, model training and MLflow tracking – Completed
+- Stage 3: FastAPI, API testing, Docker, CI/CD, Kubernetes and JSON logging – Completed
+- Stage 4: Drift monitoring, model retraining and holdout predictions – In Progress
